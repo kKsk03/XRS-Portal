@@ -64,6 +64,20 @@
                     </v-card-custom>
                 </v-col>
                 <v-col cols="12" xl="4" lg="4" md="6" sm="12" style="padding: 10px;">
+                    <v-card-custom class="mx-auto" subtitle="XRS官方QQ3群 | 1011991306" title="FLYHIGH XRS #3">
+                        <template v-slot:prepend>
+                            <v-avatar>
+                                <v-img src="https://img1.kksk03.site/qqGroupIcons/FLYHIGH-XRS-3.jpg"></v-img>
+                            </v-avatar>
+                        </template>
+                        <v-card-item style="display: flex; justify-content: center; align-items: center;">
+                            <div v-html="svg_3"
+                                style="width: 208px; height: 208px; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
+                            </div>
+                        </v-card-item>
+                    </v-card-custom>
+                </v-col>
+                <v-col cols="12" xl="4" lg="4" md="6" sm="12" style="padding: 10px;">
                     <v-card-custom class="mx-auto" subtitle="联机对战中心 | 1012371441" title="LiveHouse CiRCLE">
                         <template v-slot:prepend>
                             <v-avatar>
@@ -71,7 +85,7 @@
                             </v-avatar>
                         </template>
                         <v-card-item style="display: flex; justify-content: center; align-items: center;">
-                            <div v-html="svg_3"
+                            <div v-html="svg_99"
                                 style="width: 208px; height: 208px; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
                             </div>
                         </v-card-item>
@@ -121,6 +135,7 @@ const bgColor = computed(() =>
 const svg_1 = ref('')
 const svg_2 = ref('')
 const svg_3 = ref('')
+const svg_99 = ref('')
 
 const qrCodeColor = computed(() => ({
     code: '#303133',
@@ -145,9 +160,9 @@ function generateQrCode(url, svg) {
 // 监听 bgColor，保证值计算出来再生成二维码
 watchEffect(() => {
     generateQrCode('https://qm.qq.com/q/NukDfq9562', svg_1) // XRS 1群
-    generateQrCode('https://qm.qq.com/q/PlJpI7OjWc', svg_2) // XRS 1群
-    generateQrCode('https://qm.qq.com/q/OcI4FsXsYY', svg_3) // XRS 1群
-
+    generateQrCode('https://qm.qq.com/q/PlJpI7OjWc', svg_2) // XRS 2群
+    generateQrCode('https://qm.qq.com/q/S4GZxt254k', svg_3) // XRS 3群
+    generateQrCode('https://qm.qq.com/q/OcI4FsXsYY', svg_99) // 联机中心
 })
 
 const titleShadow = computed(() =>
